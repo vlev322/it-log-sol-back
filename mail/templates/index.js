@@ -1,11 +1,12 @@
 const fs = require("fs");
+require("dotenv").config();
 
 // Message object
 let message = ({ name, email, phone, region, nda, file, details }) => {
   return {
     // Comma separated list of recipients
-    to: "vlev322@gmail.com, vlev322@ukr.net",
-    from: "vlev322@ukr.net",
+    to: process.env.TO,
+    from: process.env.FROM,
     // Subject of the message
     subject: "Contact us form logic.it.solution.com ",
     // HTML body
